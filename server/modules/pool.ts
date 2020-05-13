@@ -32,7 +32,7 @@ if (process.env.DATABASE_URL) {
   const port = process.env.PORT_DB ? process.env.PORT_DB : 5432;
   const database = process.env.POSTGRES_DB
     ? process.env.POSTGRES_DB
-    : 'dijkstra';
+    : 'pet_hotel';
 
   config = {
     host, // Server hosting the postgres database
