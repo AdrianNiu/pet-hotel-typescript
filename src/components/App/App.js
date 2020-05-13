@@ -4,6 +4,8 @@ import './App.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 
+import PetForm from '../PetForm/PetForm';
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch({ type: 'GET_SAMPLE_API_CALL' });
@@ -13,19 +15,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Pet Hotel</h1>
         </header>
+        <PetForm />
       </div>
     );
   }
