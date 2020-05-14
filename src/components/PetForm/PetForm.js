@@ -40,17 +40,9 @@ class PetForm extends Component{
         
         return(
             <>
-
-
-{JSON.stringify(this.props.store.ownerReducer)}
-
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
-                
-                    
-                    {JSON.stringify(this.props.store.ownerReducer)}
-                    {JSON.stringify(this.state)}
                     <select value={this.state.value} onChange={this.handleOwnerChange}>
                     {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
                         <option value={item.id}>
