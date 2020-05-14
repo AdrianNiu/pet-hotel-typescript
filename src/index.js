@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 import rootReducer from './redux/reducers/_root.reducer';
 import rootSaga from './redux/sagas/_root.saga';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './components/App/App';
 

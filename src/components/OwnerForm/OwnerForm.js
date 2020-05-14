@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
+import { Button, Form, FormGroup, Input, } from 'reactstrap';
+
 
 class OwnerForm extends Component{
 
@@ -31,12 +35,14 @@ class OwnerForm extends Component{
        
         return(
             <>
-            <form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} inline>
+                <FormGroup>
                 <h2>Add Owner</h2>
-                <input placeholder="Owner Name" onChange={(event) => {this.handleChange( event, 'username')}}></input>
-                <input placeholder="Password" onChange={(event) => { this.handleChange(event, 'password') }}></input>
-                <button type="submit">Submit</button>
-            </form>
+                <Input placeholder="Owner Name" onChange={(event) => {this.handleChange( event, 'username')}}></Input>
+                <Input placeholder="Password" onChange={(event) => { this.handleChange(event, 'password') }}></Input>
+                <Button type="submit">Submit</Button>
+                </FormGroup>
+            </Form>
             </>
         );
     }
