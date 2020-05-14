@@ -37,7 +37,7 @@ class PetForm extends Component{
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
                     <Input placeholder="Owner Name" onChange={(event) => { this.handleChange(event, 'owner') }}></Input>
                     <Button type="submit">Submit</Button>
-                </FormGroup>
+                </FormGroup> 
             </Form>
             </>
         );

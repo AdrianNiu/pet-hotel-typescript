@@ -25,7 +25,7 @@ class OwnerTable extends Component {
                         5
                     </td>
                     <td>
-                        <Button>Delete</Button>
+                        <Button>Delete</Button> 
                     </td>
                 </tr>
             </Table>
