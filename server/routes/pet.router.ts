@@ -65,5 +65,45 @@ router.delete(
     }
 );
 
+//PUT route
+
+router.put(
+  "/checkin/:id",
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    console.log("made it to server Pet PUT", req.params);
+    const queryString: string = `UPDATE "pet"   
+        SET "check_in" = TRUE 
+        WHERE "id" = $1;`;
+    pool
+      .query(queryString, [req.params.id])
+      .then((response: any): void => {
+        res.sendStatus(201);
+      })
+      .catch((err: string): void => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  }
+);
+
+router.put(
+  "/checkout/:id",
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    console.log("made it to server Pet PUT", req.params);
+    const queryString: string = `UPDATE "pet"   
+        SET "check_in" = FALSE 
+        WHERE "id" = $1;`;
+    pool
+      .query(queryString, [req.params.id])
+      .then((response: any): void => {
+        res.sendStatus(201);
+      })
+      .catch((err: string): void => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  }
+);
+
 export default router;
 
