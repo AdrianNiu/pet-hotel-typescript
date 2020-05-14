@@ -52,7 +52,7 @@ class PetTable extends Component {
           <tbody>
             {this.props.store.petReducer.map((pet) => (
               <tr key={pet.id}>
-                <td></td>
+                <td>{pet.username}</td>
                 <td>{pet.pet_name}</td>
                 <td>{pet.pet_breed}</td>
                 <td>{pet.pet_color}</td>
