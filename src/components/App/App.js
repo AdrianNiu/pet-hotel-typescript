@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import PetForm from '../PetForm/PetForm';
 import PetTable from '../PetTable/PetTable';
 import OwnerTable from '../OwnerTable/OwnerTable';
+import ManageOwner from '../ManageOwner/ManageOwner';
+import PetView from '../PetView/PetView';
 
 
 class App extends Component {
@@ -16,16 +18,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Pet Hotel</h1>
-        </header>
-        {JSON.stringify(this.props.store.ownerReducer)}
-        <PetForm />
-        <PetTable />
-        <OwnerTable />
-
+      <div>
+        <Router>
+        <div>
+          <Route 
+            path="/manage"
+            component={ManageOwner}
+          />
+          <Route 
+            exact path="/"
+            component={PetView}
+          />
+        </div>
+        </Router>
       </div>
+
     );
   }
 }
