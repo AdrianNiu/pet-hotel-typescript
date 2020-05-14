@@ -17,9 +17,9 @@ INSERT INTO "user" ("username", "password")
 VALUES ('alsisonsmith', 'alisonsmith'),
 ('danmariao', 'danmariao');
 
-INSERT INTO "pet" ("pet_name", "pet_color", "pet_breed", "check_in")
-VALUES ('Beau', 'Grey', 'Siberian Husky', 'true'),
-('Yoda', 'Black', 'Dobermann', 'true'),
-('Ziggy', 'White', 'Samoyed', 'false'),
-('Zeus', 'Brown', 'GreyHound', 'true'),
-('Milo', 'Black', 'Pug', 'false');
+INSERT INTO "pet" ("user_id", "pet_name", "pet_color", "pet_breed", "check_in")
+VALUES ('1','Beau', 'Grey', 'Siberian Husky', 'true'),
+('2','Yoda', 'Black', 'Dobermann', 'true'),
+('2','Ziggy', 'White', 'Samoyed', 'false'),
+('1','Zeus', 'Brown', 'GreyHound', 'true'),
+('1','Milo', 'Black', 'Pug', 'false');
