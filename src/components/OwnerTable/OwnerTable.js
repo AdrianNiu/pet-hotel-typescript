@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
+
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
 import { Table, Button } from 'reactstrap';
+
 
 
 class OwnerTable extends Component {
 
-    state = [{
-        name: 'Frieda',
-    }]
+    
+
+    deleteEntry = () => {
+        console.log('In deleteEntry')
+    }
+
 
     render(){
         return(
@@ -17,21 +25,21 @@ class OwnerTable extends Component {
                     <th>Number of Pets</th>
                     <th>Actions</th>
                 </tr>
-                <tr>
-                    <td>
-                        Frieda
-                    </td>
-                    <td>
-                        5
-                    </td>
-                    <td>
-                        <Button>Delete</Button> 
-                    </td>
-                </tr>
+
+                <tbody>
+                {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => <tr key={item.id}>
+                        <td>{item.username}</td>
+                        {/* <td>{item.number_of_pets}</td> */}
+                        </tr>)}
+                </tbody>
+
             </Table>
+
             </>
         );
     }
 }
 
-export default OwnerTable;
+
+
+export default (connect(mapStoreToProps)(OwnerTable));
