@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Table, Button } from 'reactstrap';
+
 
 class OwnerTable extends Component {
 
@@ -9,7 +11,7 @@ class OwnerTable extends Component {
     render(){
         return(
             <>
-            <table>
+            <Table>
                 <tr>
                     <th>Name</th>
                     <th>Number of Pets</th>
@@ -23,10 +25,10 @@ class OwnerTable extends Component {
                         5
                     </td>
                     <td>
-                        <button>Delete</button>
+                        <Button>Delete</Button>
                     </td>
                 </tr>
-            </table>
+            </Table>
             </>
         );
     }

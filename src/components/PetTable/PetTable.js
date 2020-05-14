@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './PetTable.css';
+import { Table } from 'reactstrap';
 
 class PetTable extends Component {
 
@@ -19,7 +20,7 @@ class PetTable extends Component {
         return (
             <div>
                 <h1>History</h1>
-                <table>
+                <Table>
                     <thead>
                         <tr>
                             <th>Owner</th>
@@ -42,7 +43,7 @@ class PetTable extends Component {
                         <td><button type="button" onClick={(event) => this.checkIn(pet)}>Check-In</button><div className="divider"/><button type="button" onClick={() => this.deleteEntry(pet.id)}>Delete</button></td>
                         </tr>)} */}
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }
