@@ -41,7 +41,9 @@ class PetForm extends Component{
         return(
             <>
 
+
 {JSON.stringify(this.props.store.ownerReducer)}
+
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
@@ -62,6 +64,7 @@ class PetForm extends Component{
                     <Button type="submit">Submit</Button>
                 </FormGroup> 
             </Form>
+
 
             </>
         );
