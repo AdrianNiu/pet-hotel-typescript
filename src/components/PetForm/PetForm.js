@@ -13,7 +13,7 @@ class PetForm extends Component{
         name: '',
         color: '',
         breed: '',
-        owner: '',
+        owner: '', 
     }
     
     handleSubmit = () => {
@@ -21,6 +21,13 @@ class PetForm extends Component{
 
         this.props.dispatch({
             type: 'POST_PET', payload: this.state
+        });
+        //TODO validate inputs
+        this.setState({
+                name: '',
+                color: '',
+                breed: '',
+                owner: '',
         })
     }
 
@@ -52,6 +59,9 @@ class PetForm extends Component{
                     {JSON.stringify(this.props.store.ownerReducer)}
                     {JSON.stringify(this.state)}
                     <select value={this.state.value} onChange={this.handleOwnerChange}>
+                    <option value=''>
+                            Choose an owner
+                        </option>
                     {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
                         <option value={item.id}>
                             {item.username}
