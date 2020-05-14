@@ -9,6 +9,7 @@ import PetTable from '../PetTable/PetTable';
 import OwnerTable from '../OwnerTable/OwnerTable';
 import ManageOwner from '../ManageOwner/ManageOwner';
 import PetView from '../PetView/PetView';
+import NavBar from '../NavBar/NavBar';
 
 
 
@@ -22,6 +23,7 @@ class App extends Component {
       <div>
         <Router>
         <div>
+            <NavBar/>
           <Route 
             path="/manage"
             component={ManageOwner}
