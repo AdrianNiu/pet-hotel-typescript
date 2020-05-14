@@ -14,7 +14,8 @@ function* addOwners(action) {
   console.log('this action.payload  in addOwner',action.payload)
   try {
     const response = yield axios.post('/owner',action.payload);
-    yield put({ type: 'SET_OWNERS', payload: response.data });
+    console.log( 'here is response fro owner POST', response.data);
+    yield put({ type: 'GET_OWNERS'});
   } catch (error) {
     console.error('POST for adding owner failed', error);
   }
