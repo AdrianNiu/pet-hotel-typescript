@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 import PetForm from '../PetForm/PetForm';
 import PetTable from '../PetTable/PetTable';
+import OwnerTable from '../OwnerTable/OwnerTable';
+
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +22,8 @@ class App extends Component {
         </header>
         <PetForm />
         <PetTable />
+        <OwnerTable />
+
       </div>
     );
   }
