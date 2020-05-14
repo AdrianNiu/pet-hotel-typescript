@@ -33,14 +33,14 @@ class PetTable extends Component {
 
                     <tbody>
                         
-                    {this.props.reduxStore.PetTable.map(pet => <tr key={pet.id}>
+    {/*                 {this.props.reduxStore.PetTable.map(pet => <tr key={pet.id}>
                         <td>{pet.owner}</td>
                         <td>{pet.pet}</td>
                         <td>{pet.breed}</td>
                         <td>{pet.color}</td>
                         <td>{pet.checkIn}</td>
                         <td><button type="button" onClick={(event) => this.checkIn(pet)}>Check-In</button><div className="divider"/><button type="button" onClick={() => this.deleteEntry(pet.id)}>Delete</button></td>
-                        </tr>)}
+                        </tr>)} */}
                     </tbody>
                 </table>
             </div>

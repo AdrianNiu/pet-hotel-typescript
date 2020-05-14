@@ -11,7 +11,7 @@ import OwnerTable from '../OwnerTable/OwnerTable';
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch({ type: 'GET_SAMPLE_API_CALL' });
+    this.props.dispatch({ type: 'GET_OWNERS' });
   }
 
   render() {
@@ -20,6 +20,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Pet Hotel</h1>
         </header>
+        {JSON.stringify(this.props.store.ownerReducer)}
         <PetForm />
         <PetTable />
         <OwnerTable />
