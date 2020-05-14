@@ -29,7 +29,8 @@ class OwnerTable extends Component {
                 <tbody>
                 {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => <tr key={item.id}>
                         <td>{item.username}</td>
-                        {/* <td>{item.number_of_pets}</td> */}
+                        <td>{item.number_of_pets}</td>
+                        <td><button type="button" onClick={() => this.deleteEntry(pet.id)}>Delete</button></td>
                         </tr>)}
                 </tbody>
 
