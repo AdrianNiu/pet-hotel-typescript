@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
+
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
 import { Button, Form, FormGroup, Input, } from 'reactstrap';
+
 
 class OwnerForm extends Component{
 
     state = {
         username: '',
-        password: '',
+        password: ''
     }
     
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
         console.log('in handleSubmit');
+        this.props.dispatch({type:'ADD_OWNER', payload:{
+            username:this.state.username,
+            password:this.state.password
+        }})  
     }
 
     handleChange =(event, propertyName) => {
@@ -22,7 +32,7 @@ class OwnerForm extends Component{
     }
 
     render(){
-
+       
         return(
             <>
             <Form onSubmit={this.handleSubmit} inline>
@@ -38,4 +48,4 @@ class OwnerForm extends Component{
     }
 }
 
-export default OwnerForm;
+export default connect (mapStoreToProps)(OwnerForm);

@@ -16,10 +16,16 @@ class PetTable extends Component {
     this.props.dispatch({ type: "DELETE_ENTRY", payload: { pet_id: id } });
   };
 
+
   checkIn = (event) => {
     console.log("In checkIn", event);
     this.props.dispatch({ type: 'CHECKIN_PET', payload: event})
   };
+
+   deleteEntry = (id) => {
+        console.log('In deleteEntry', id);
+        this.props.dispatch({ type: 'DELETE_PET', payload: {pet_id: id}});
+    }
 
   checkOut = (event) => {
     console.log("In checkOut", event);

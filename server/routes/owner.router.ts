@@ -33,8 +33,22 @@ router.get(
 router.post(
   '/',
   (req: Request, res: Response, next: express.NextFunction): void => {
+   console.log(req.body)
+    const username:string = req.body.username;
+  const password:string = req.body.password;
+  
+   const queryText:string = 'INSERT INTO "user" ("username", "password") VALUES ($1, $2);';
+  pool.query(queryText, [username, password])
+  .then((response: any): void => {
     res.sendStatus(201);
+  })
+  .catch((err: string): void => {
+    console.log(err);
+    res.sendStatus(500);
+  });
   }
-);
+)
+
+
 
 export default router;
