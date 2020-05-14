@@ -16,11 +16,8 @@ class PetView extends Component {
         <>
         <h1>Pet View</h1>
       <div>
-
-        {JSON.stringify(this.props.store.ownerReducer)}
         <PetForm />
         <PetTable />
-
       </div>
       </>
     );
