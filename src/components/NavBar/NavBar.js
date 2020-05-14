@@ -13,7 +13,7 @@ const NavBar = (props) => {
           <NavLink href="#/">Dashboard</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#/manage">Mange Owner</NavLink>
+          <NavLink href="#/manage">Manage Owner</NavLink>
         </NavItem>
       </Nav>
     </div>
