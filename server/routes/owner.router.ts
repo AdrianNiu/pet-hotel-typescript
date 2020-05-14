@@ -10,7 +10,7 @@ const router: express.Router = express.Router();
 router.get(
   '/',
   (req: Request, res: Response, next: express.NextFunction): void => {
-    const queryString: string = `SELECT "user"."id", "username", COUNT("user"."id") AS "number_of_pets" from "user" JOIN "pet" ON "user"."id" = "pet"."user_id"
+    const queryString: string = `SELECT "user"."id", "username", COUNT("pet"."id") AS "number_of_pets" from "user" LEFT JOIN "pet" ON "user"."id" = "pet"."user_id"
     GROUP BY "user"."id"
     ;
     `;
