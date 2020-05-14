@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
+
 import { Button, Form, FormGroup, Input,} from 'reactstrap';
+
+import { connect } from 'react-redux'; 
+
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
 
 class PetForm extends Component{
 
     state = {
         name: '',
         color: '',
-        
         breed: '',
         owner: '',
     }
     
     handleSubmit = () => {
         console.log('in handleSubmit');
+
+        this.props.dispatch({
+            type: 'POST_PET', payload: this.state
+        })
     }
 
     handleChange =(event, propertyName) => {
@@ -25,10 +34,11 @@ class PetForm extends Component{
     }
 
     render(){
-
+        
         return(
             <>
-           
+
+         
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
@@ -39,9 +49,12 @@ class PetForm extends Component{
                     <Button type="submit">Submit</Button>
                 </FormGroup> 
             </Form>
+
             </>
         );
     }
 }
 
-export default PetForm;
+
+
+export default connect(mapStoreToProps)(PetForm);
