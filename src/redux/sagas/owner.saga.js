@@ -10,8 +10,22 @@ function* getOwners() {
   }
 }
 
-function* sampleSaga() {
-  yield takeLatest('GET_OWNERS', getOwners);
+function* addOwners(action) {
+  console.log('this action.payload  in addOwner',action.payload)
+  try {
+    const response = yield axios.post('/owner',action.payload);
+    yield put({ type: 'SET_OWNERS', payload: response.data });
+  } catch (error) {
+    console.error('POST for adding owner failed', error);
+  }
 }
 
-export default sampleSaga;
+function* ownerSaga() {
+  yield takeLatest('GET_OWNERS', getOwners);
+  yield takeLatest('ADD_OWNER', addOwners);
+
+}
+
+
+
+export default ownerSaga;
