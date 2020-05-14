@@ -33,7 +33,6 @@ class PetForm extends Component{
         
         return(
             <>
-            {JSON.stringify(this.props.store)}
             <form onSubmit={this.handleSubmit}>
                 <h2>Add Pet</h2>
                 <input placeholder="Pet" onChange={(event) => {this.handleChange( event, 'name')}}></input>

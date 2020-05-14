@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import mapStoreToProps from '../../redux/mapStoreToProps';
+import { connect } from 'react-redux'; 
+
+
 import './PetTable.css';
 
 class PetTable extends Component {
+
+    componentDidMount() {
+        this.props.dispatch({ type: 'GET_PETS' });
+    }
 
     deleteEntry = (id) => {
         console.log('In deleteEntry', id);
@@ -17,6 +25,7 @@ class PetTable extends Component {
 
     render() {
         return (
+           
             <div>
                 <h1>History</h1>
                 <table>
@@ -33,14 +42,18 @@ class PetTable extends Component {
 
                     <tbody>
                         
-    {/*                 {this.props.reduxStore.PetTable.map(pet => <tr key={pet.id}>
-                        <td>{pet.owner}</td>
-                        <td>{pet.pet}</td>
-                        <td>{pet.breed}</td>
-                        <td>{pet.color}</td>
-                        <td>{pet.checkIn}</td>
+                        {this.props.store.petReducer.map(pet => <tr key={pet.id}>
+                        <td></td>
+                        <td>{pet.pet_name}</td>
+                        <td>{pet.pet_breed}</td>
+                        <td>{pet.pet_color}</td>
+                        {pet.check_in ? 
+                        <td>Yes</td>
+                        :
+                        <td>No</td>
+                        }
                         <td><button type="button" onClick={(event) => this.checkIn(pet)}>Check-In</button><div className="divider"/><button type="button" onClick={() => this.deleteEntry(pet.id)}>Delete</button></td>
-                        </tr>)} */}
+                        </tr>)}
                     </tbody>
                 </table>
             </div>
@@ -48,4 +61,4 @@ class PetTable extends Component {
     }
 }
 
-export default PetTable
+export default connect(mapStoreToProps)(PetTable);
