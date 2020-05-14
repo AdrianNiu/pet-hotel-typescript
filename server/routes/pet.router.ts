@@ -54,7 +54,7 @@ router.delete(
     (req: Request, res: Response, next: express.NextFunction): void => {
         console.log('made it to server Pet DELETE', req.body);
         const queryString: string = `DELETE FROM "pet" WHERE "id" = $1;`; 
-        pool.query(queryString, [req.body.id])
+        pool.query(queryString, [req.body.pet_id])
         .then ((response:any): void => {
             res.sendStatus(201);
         })
