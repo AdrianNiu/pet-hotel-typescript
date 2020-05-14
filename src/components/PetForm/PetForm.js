@@ -24,6 +24,9 @@ class PetForm extends Component{
         })
     }
 
+    handleOwnerChange = (event) => {
+        this.setState({owner: event.target.value});
+    }
     handleChange =(event, propertyName) => {
         console.log( 'in handleChange', propertyName, event.target.value);
         
@@ -38,14 +41,24 @@ class PetForm extends Component{
         return(
             <>
 
-         
+{JSON.stringify(this.props.store.ownerReducer)}
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
+                
+                    
+                    {JSON.stringify(this.props.store.ownerReducer)}
+                    {JSON.stringify(this.state)}
+                    <select value={this.state.value} onChange={this.handleOwnerChange}>
+                    {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
+                        <option value={item.id}>
+                            {item.username}
+                        </option>
+                ))} 
+                    </select>
                     <Input placeholder="Pet" onChange={(event) => { this.handleChange(event, 'name') }}></Input>
                     <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>   
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
-                    <Input placeholder="Owner Name" onChange={(event) => { this.handleChange(event, 'owner') }}></Input>
                     <Button type="submit">Submit</Button>
                 </FormGroup> 
             </Form>
