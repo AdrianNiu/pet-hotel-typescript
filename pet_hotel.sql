@@ -22,4 +22,5 @@ VALUES ('1','Beau', 'Grey', 'Siberian Husky', 'true'),
 ('2','Yoda', 'Black', 'Dobermann', 'true'),
 ('2','Ziggy', 'White', 'Samoyed', 'false'),
 ('1','Zeus', 'Brown', 'GreyHound', 'true'),
-('1','Milo', 'Black', 'Pug', 'false');
+('1','Milo', 'Black', 'Pug', 'false'),
+('1','Bo Bo', 'Brown', 'PitBull', 'false');
