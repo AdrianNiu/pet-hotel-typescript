@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+
+import { Button, Form, FormGroup, Input,} from 'reactstrap';
+
 import { connect } from 'react-redux'; 
 
 import mapStoreToProps from '../../redux/mapStoreToProps';
+
 
 class PetForm extends Component{
 
@@ -33,14 +37,21 @@ class PetForm extends Component{
         
         return(
             <>
-            <form onSubmit={this.handleSubmit}>
-                <h2>Add Pet</h2>
-                <input placeholder="Pet" onChange={(event) => {this.handleChange( event, 'name')}}></input>
-                <input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></input>
-                <input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></input>
-                <input placeholder="Owner Name" onChange={(event) => { this.handleChange(event, 'owner') }}></input>
-                <button type="submit">Submit</button>
-            </form>
+
+
+      
+            <Form onSubmit={this.handleSubmit} inline>
+                    <h2>Add Pet</h2>
+                <FormGroup>
+                    <Input placeholder="Pet" onChange={(event) => { this.handleChange(event, 'name') }}></Input>
+                    <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>   
+                    <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
+                    <Input placeholder="Owner Name" onChange={(event) => { this.handleChange(event, 'owner') }}></Input>
+                    <Button type="submit">Submit</Button>
+                </FormGroup> 
+            </Form>
+
+
             </>
         );
     }
