@@ -33,7 +33,7 @@ class OwnerTable extends Component {
                         <td>{item.number_of_pets}</td>
 
                         <td>
-                        {(item.number_of_pets == 0) && <button type="button" onClick={() => this.deleteEntry(item.id)}>Delete</button>}
+                        {(item.number_of_pets == 0) && <Button type="button" onClick={() => this.deleteEntry(item.id)}>Delete</Button>}
                         </td>
 
                         </tr>)}
