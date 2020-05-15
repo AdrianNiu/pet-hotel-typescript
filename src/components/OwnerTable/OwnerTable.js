@@ -11,8 +11,9 @@ class OwnerTable extends Component {
 
     
 
-    deleteEntry = () => {
+    deleteEntry = (id) => {
         console.log('In deleteEntry')
+        this.props.dispatch({ type: 'DELETE_OWNER', payload: {id} })
     }
 
 
@@ -30,7 +31,11 @@ class OwnerTable extends Component {
                 {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => <tr key={item.id}>
                         <td>{item.username}</td>
                         <td>{item.number_of_pets}</td>
-                        <td><button type="button" className="btn btn-success" onClick={() => this.deleteEntry(item.id)}>Delete</button></td>
+
+                        <td>
+                        {(item.number_of_pets == 0) && <button type="button" onClick={() => this.deleteEntry(item.id)}>Delete</button>}
+                        </td>
+
                         </tr>)}
                 </tbody>
 
