@@ -58,18 +58,19 @@ class PetTable extends Component {
                 <td>{pet.pet_color}</td>
                 {pet.check_in ? <td>Yes</td> : <td>No</td>}
                 <td>
-                  <button type="submit" onClick={(event) => this.checkIn(pet.id)}>
+                  <button type="submit" className="btn btn-info" onClick={(event) => this.checkIn(pet.id)}>
                     Check-In
                   </button>
 
                   <div className="divider" />
-                  <button type="button" onClick={() => this.checkOut(pet.id)}>
+                  <button type="button" className="btn btn-info" onClick={() => this.checkOut(pet.id)}>
                     Check-Out
                   </button>
 
                   <div className="divider" />
                   <button
                     type="button"
+                    className="btn btn-info"
                     onClick={() => this.deleteEntry(pet.id)}
                   >
                     Delete
