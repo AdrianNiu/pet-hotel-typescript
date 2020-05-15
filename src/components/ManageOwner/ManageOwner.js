@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
-
+import './ManageOwner.css';
 
 import OwnerTable from '../OwnerTable/OwnerTable';
 import OwnerForm from '../OwnerForm/OwnerForm';
@@ -14,6 +14,7 @@ class ManageOwner extends Component {
 
   render() {
     return (
+      <div className="manageOwner">
       <>
         <h1>Manage Owner</h1>
         <div>
@@ -21,7 +22,7 @@ class ManageOwner extends Component {
         <OwnerTable />
       </div>
       </>
-
+      </div>
     );
   }
 }

@@ -1,0 +1,13 @@
+.petView {
+    background-image: url("/images/pethotel2.jpg");
+    height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+th, td {
+    color: black;
+    font-size: 26px;
+}
