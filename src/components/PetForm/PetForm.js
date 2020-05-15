@@ -9,6 +9,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { storage } from "../../Firebase";
 
 
+
 class PetForm extends Component {
   constructor(props) {
     super(props);
@@ -20,38 +21,46 @@ class PetForm extends Component {
       image: null,
       url: "",
       progress: 0,
+      errorMessage: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleSubmit = () => {
-    console.log("in handleSubmit");
+        console.log('in handleSubmit');
+        if((this.state.name === '') || (this.state.color === '') || (this.state.breed === '') || (this.state.owner === '')){
+            console.log('missing data!');
+            this.setState({
+                errorMessage:  'Please Fill in all attributes of your pet'
+            })
+ 
+        }else{
+            this.props.dispatch({
+                type: 'POST_PET', payload: this.state
+            });
+            this.setState({
+                name: '',
+                color: '',
+                breed: '',
+                owner: '',
+                url: '',
+        });
+        }
 
-    this.props.dispatch({
-      type: "POST_PET",
-      payload: this.state,
-    });
-    //TODO validate inputs
-    this.setState({
-      name: "",
-      color: "",
-      breed: "",
-      owner: "",
-    });
-  };
+    }
+  
+ 
 
-  handleOwnerChange = (event) => {
-    this.setState({ owner: event.target.value });
-  };
+ handleOwnerChange = (event) => {
+        this.setState({owner: event.target.value, errorMessage: ''});
+    }
 
-  handleChange = (event, propertyName) => {
-    console.log("in handleChange", propertyName, event.target.value);
+  handleChange =(event, propertyName) => {
 
-    this.setState({
-      [propertyName]: event.target.value,
-    });
-  };
+        this.setState({
+            [propertyName]: event.target.value, errorMessage: ''
+        })
 
   //Image upload code
   handleChangeImage = (event) => {
@@ -61,6 +70,7 @@ class PetForm extends Component {
     }
   };
 
+
   handleUpload = (event) => {
     const { image } = this.state;
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -69,8 +79,7 @@ class PetForm extends Component {
       (snapshot) => {
         //progress function
         const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         this.setState({ progress });
       },
       (error) => {
@@ -137,6 +146,7 @@ class PetForm extends Component {
               }}
             ></Input>
             <Button type="submit">Submit</Button>
+            <p style={{color: "red"}}>{this.state.errorMessage}</p>
           </FormGroup>
         </Form>
       </>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Nav, NavItem, NavLink} from 'reactstrap';
+import './navColor.css';
 
 const NavBar = (props) => {
   return (
-    <div style={{
+    <div className="navColor" style={{
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     }}>
       <Nav>
         <NavItem>

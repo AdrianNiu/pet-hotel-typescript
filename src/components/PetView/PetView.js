@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import PetForm from '../PetForm/PetForm';
 import PetTable from '../PetTable/PetTable';
-
+import './PetView.css';
 
 class PetView extends Component {
   componentDidMount() {
@@ -13,13 +13,15 @@ class PetView extends Component {
 
   render() {
     return (
+      <div className="petView">
         <>
-        <h1>Pet View</h1>
+        <h1 style={{textAlign: "center"}}>Pet View</h1>
       <div>
         <PetForm />
         <PetTable />
       </div>
       </>
+      </div>
     );
   }
 }

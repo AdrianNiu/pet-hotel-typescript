@@ -11,7 +11,8 @@ router.get(
         const queryString: string = 
         `SELECT "pet"."id", "pet_name", "username", 
         "pet_color", "pet_breed", "check_in", "image_url" FROM "pet" 
-        JOIN "user" ON "user"."id" = "pet"."user_id";`;
+        JOIN "user" ON "user"."id" = "pet"."user_id"
+        ORDER BY "username", "pet_name";`;
         pool
             .query(queryString)
             .then((response: any): void => {
