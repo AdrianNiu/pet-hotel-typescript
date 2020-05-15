@@ -66,7 +66,7 @@ class PetForm extends Component{
                             Choose an owner
                         </option>
                     {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
-                        <option value={item.id}>
+                        <option key={item.id} value={item.id}>
                             {item.username}
                         </option>
                 ))} 
