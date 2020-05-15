@@ -58,8 +58,13 @@ class PetForm extends Component{
         
         return(
             <>
-            <Form onSubmit={this.handleSubmit} inline>
+                <Form onSubmit={this.handleSubmit} inline style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}>
                     <h2>Add Pet</h2>
+                    &emsp;&emsp;
                 <FormGroup>
                     <Input type="select" value={this.state.value} onChange={this.handleOwnerChange}>
                         <option value=''>
@@ -71,9 +76,13 @@ class PetForm extends Component{
                         </option>
                 ))} 
                     </Input>
+                    &nbsp;&nbsp;
                     <Input placeholder="Pet" onChange={(event) => { this.handleChange(event, 'name') }}></Input>
-                    <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>   
+                    &nbsp;&nbsp;
+                    <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>
+                    &nbsp;&nbsp; 
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
+                    &nbsp;&nbsp;
                     <Button type="submit">Submit</Button>
                     <p style={{color: "red"}}>{this.state.errorMessage}</p>
                 </FormGroup> 

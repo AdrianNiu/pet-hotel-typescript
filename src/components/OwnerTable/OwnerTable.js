@@ -20,6 +20,7 @@ class OwnerTable extends Component {
     render(){
         return(
             <>
+            <h1>Owner List</h1>
             <Table>
                 <tr>
                     <th>Name</th>

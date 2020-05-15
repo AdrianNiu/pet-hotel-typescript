@@ -35,11 +35,18 @@ class OwnerForm extends Component{
        
         return(
             <>
-            <Form onSubmit={this.handleSubmit} inline>
+                <Form onSubmit={this.handleSubmit} inline style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}>
                 <FormGroup>
                 <h2>Add Owner</h2>
+                &emsp;&nbsp;
                 <Input placeholder="Owner Name" onChange={(event) => {this.handleChange( event, 'username')}}></Input>
+                &nbsp;&nbsp;
                 <Input placeholder="Password" onChange={(event) => { this.handleChange(event, 'password') }}></Input>
+                &nbsp;&nbsp;
                 <Button type="submit">Submit</Button>
                 </FormGroup>
             </Form>
