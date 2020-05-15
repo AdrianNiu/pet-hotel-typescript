@@ -14,35 +14,46 @@ class PetForm extends Component{
         color: '',
         breed: '',
         owner: '', 
-    }
+        errorMessage: ''
+    };
+  
     
+
     handleSubmit = () => {
         console.log('in handleSubmit');
-
-        this.props.dispatch({
-            type: 'POST_PET', payload: this.state
-        });
-        //TODO validate inputs
-        this.setState({
+        if((this.state.name === '') || (this.state.color === '') || (this.state.breed === '') || (this.state.owner === '')){
+            console.log('missing data!');
+            this.setState({
+                errorMessage:  'Please Fill in all attributes of your pet'
+            })
+ 
+        }else{
+            this.props.dispatch({
+                type: 'POST_PET', payload: this.state
+            });
+            this.setState({
                 name: '',
                 color: '',
                 breed: '',
                 owner: '',
-        })
+        });
+        }
+
     }
 
     handleOwnerChange = (event) => {
-        this.setState({owner: event.target.value});
+        this.setState({owner: event.target.value, errorMessage: ''});
+        
     }
     handleChange =(event, propertyName) => {
-        console.log( 'in handleChange', propertyName, event.target.value);
-        
-        this.setState({
-            [propertyName]: event.target.value
-        })
 
+        this.setState({
+            [propertyName]: event.target.value, errorMessage: ''
+        })
+        
     }
 
+    
     render(){
         
         return(
@@ -64,6 +75,7 @@ class PetForm extends Component{
                     <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>   
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
                     <Button type="submit">Submit</Button>
+                    <p style={{color: "red"}}>{this.state.errorMessage}</p>
                 </FormGroup> 
             </Form>
 
