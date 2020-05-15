@@ -82,8 +82,10 @@ class PetForm extends Component{
                     <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>
                     &nbsp;&nbsp; 
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
+
                     &nbsp;&nbsp;
-                    <Button type="submit">Submit</Button>
+                    <Button id="petFormSubmit" type="submit">Submit</Button>
+
                     <p style={{color: "red"}}>{this.state.errorMessage}</p>
                 </FormGroup> 
             </Form>

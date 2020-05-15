@@ -47,7 +47,7 @@ class OwnerForm extends Component{
                 &nbsp;&nbsp;
                 <Input placeholder="Password" onChange={(event) => { this.handleChange(event, 'password') }}></Input>
                 &nbsp;&nbsp;
-                <Button type="submit">Submit</Button>
+                <Button id="ownerSubmitButton" type="submit">Submit</Button>
                 </FormGroup>
             </Form>
             </>

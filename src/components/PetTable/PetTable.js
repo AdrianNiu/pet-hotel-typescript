@@ -59,11 +59,11 @@ class PetTable extends Component {
                 {pet.check_in ? <td>Yes</td> : <td>No</td>}
                 <td>
                   {pet.check_in?
-                    <button type="button" className="btn btn-info" onClick={() => this.checkOut(pet.id)}>
+                    <button type="button" id="petTableButton" className="btn btn-info" onClick={() => this.checkOut(pet.id)}>
                     Check-Out
                     </button>
                   :
-                    <button type="submit" className="btn btn-info" onClick={(event) => this.checkIn(pet.id)}>
+                    <button type="submit" id="petTableButton2" className="btn btn-info" onClick={(event) => this.checkIn(pet.id)}>
                     Check-In
                     </button>
                   }
@@ -72,6 +72,7 @@ class PetTable extends Component {
                   <button
                     type="button"
                     className="btn btn-info"
+                    id="petTableButton3"
                     onClick={() => this.deleteEntry(pet.id)}
                   >
                     Delete
