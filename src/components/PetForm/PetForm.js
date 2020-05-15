@@ -145,12 +145,14 @@ class PetForm extends Component {
                 &nbsp;&nbsp;
                 <Input
                   placeholder="Pet"
+                  value={this.state.name}
                   onChange={(event) => {
                     this.handleChange(event, "name");
                   }}
                 ></Input>
                 &nbsp;&nbsp;
                 <Input
+                  value={this.state.color}
                   placeholder="Pet Color"
                   onChange={(event) => {
                     this.handleChange(event, "color");
@@ -158,6 +160,7 @@ class PetForm extends Component {
                 ></Input>
                 &nbsp;&nbsp;
                 <Input
+                  value={this.state.breed}
                   placeholder="Pet Breed"
                   onChange={(event) => {
                     this.handleChange(event, "breed");
