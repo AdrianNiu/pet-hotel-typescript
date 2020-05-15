@@ -9,7 +9,8 @@ CREATE TABLE "pet" (
   "pet_name" VARCHAR (80),
   "pet_color" VARCHAR (80),
   "pet_breed" VARCHAR (80),
-  "check_in" BOOLEAN
+  "check_in" BOOLEAN,
+  "image_url" VARCHAR (1000)
 );
 
 

@@ -40,6 +40,7 @@ class PetTable extends Component {
           <thead>
             <tr>
               <th>Owner</th>
+              <th>Pic</th>
               <th>Pet</th>
               <th>Breed</th>
               <th>Color</th>
@@ -53,6 +54,12 @@ class PetTable extends Component {
             {this.props.store.petReducer.map((pet) => (
               <tr key={pet.id}>
                 <td>{pet.username}</td>
+                {pet.image_url ?
+                <td><img height='75' src={pet.image_url}/></td>
+                :
+                <td></td>
+                }
+            
                 <td>{pet.pet_name}</td>
                 <td>{pet.pet_breed}</td>
                 <td>{pet.pet_color}</td>
