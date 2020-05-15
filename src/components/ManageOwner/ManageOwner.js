@@ -16,7 +16,7 @@ class ManageOwner extends Component {
     return (
       <div className="manageOwner">
       <>
-        <h1>Manage Owner</h1>
+        <h1 style={{textAlign: "center"}}>Manage Owner</h1>
         <div>
         <OwnerForm />
         <OwnerTable />
