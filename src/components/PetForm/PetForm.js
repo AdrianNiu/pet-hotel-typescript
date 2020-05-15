@@ -102,56 +102,76 @@ class PetForm extends Component {
     
     render(){
         
-        return(
-            <>
+        return (
+          <>
             <div>
               <h2>Add Pet</h2>
-              </div>
-              <Form onSubmit={this.handleSubmit} inline>
+            </div>
+
+            <Form
+              onSubmit={this.handleSubmit}
+              inline
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <div>
-                  <h5>Upload An Image</h5>
+                <h5>Upload An Image</h5>
               </div>
               <div>
-                  <input type="file" onChange={this.handleChangeImage} />
+                <input type="file" onChange={this.handleChangeImage} />
               </div>
               <progress value={this.state.progress} max="100" />
               <div>
-                  <button onClick={this.handleUpload}>Upload</button>
-                  {/* <img src={this.state.url} alt="Uploaded images" height='400' width='400'/> */}
+                <button onClick={this.handleUpload}>Upload</button>
+                {/* <img src={this.state.url} alt="Uploaded images" height='400' width='400'/> */}
               </div>
-                <Form onSubmit={this.handleSubmit} inline style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                    <h2>Add Pet</h2>
-                    &emsp;&emsp;
-                <FormGroup>
-                    <Input type="select" value={this.state.value} onChange={this.handleOwnerChange}>
-                        <option value=''>
-                            Choose an owner
-                        </option>
-                        {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
-                        <option key={item.id} value={item.id}>
-                            {item.username}
-                        </option>
-                ))} 
-                    </Input>
-                    &nbsp;&nbsp;
-                    <Input placeholder="Pet" onChange={(event) => { this.handleChange(event, 'name') }}></Input>
-                    &nbsp;&nbsp;
-                    <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>
-                    &nbsp;&nbsp; 
-                    <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
-
-                    &nbsp;&nbsp;
-                    <Button id="petFormSubmit" type="submit">Submit</Button>
-
-                    <p style={{color: "red"}}>{this.state.errorMessage}</p>
-                </FormGroup> 
+              <FormGroup>
+                <Input
+                  type="select"
+                  value={this.state.value}
+                  onChange={this.handleOwnerChange}
+                >
+                  <option value="">Choose an owner</option>
+                  {this.props.store.ownerReducer &&
+                    this.props.store.ownerReducer.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.username}
+                      </option>
+                    ))}
+                </Input>
+                &nbsp;&nbsp;
+                <Input
+                  placeholder="Pet"
+                  onChange={(event) => {
+                    this.handleChange(event, "name");
+                  }}
+                ></Input>
+                &nbsp;&nbsp;
+                <Input
+                  placeholder="Pet Color"
+                  onChange={(event) => {
+                    this.handleChange(event, "color");
+                  }}
+                ></Input>
+                &nbsp;&nbsp;
+                <Input
+                  placeholder="Pet Breed"
+                  onChange={(event) => {
+                    this.handleChange(event, "breed");
+                  }}
+                ></Input>
+                &nbsp;&nbsp;
+                <Button id="petFormSubmit" type="submit">
+                  Submit
+                </Button>
+                <p style={{ color: "red" }}>{this.state.errorMessage}</p>
+              </FormGroup>
             </Form>
-        </>
-    );
+          </>
+        );
   }
 }
 
