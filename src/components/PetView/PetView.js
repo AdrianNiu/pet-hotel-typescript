@@ -15,7 +15,7 @@ class PetView extends Component {
     return (
       <div className="petView">
         <>
-        <h1>Pet View</h1>
+        <h1 style={{textAlign: "center"}}>Pet View</h1>
       <div>
         <PetForm />
         <PetTable />
