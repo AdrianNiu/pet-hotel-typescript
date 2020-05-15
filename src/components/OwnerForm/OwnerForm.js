@@ -40,7 +40,7 @@ class OwnerForm extends Component{
                 <h2>Add Owner</h2>
                 <Input placeholder="Owner Name" onChange={(event) => {this.handleChange( event, 'username')}}></Input>
                 <Input placeholder="Password" onChange={(event) => { this.handleChange(event, 'password') }}></Input>
-                <Button type="submit">Submit</Button>
+                <Button id="ownerSubmitButton" type="submit">Submit</Button>
                 </FormGroup>
             </Form>
             </>

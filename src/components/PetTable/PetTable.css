@@ -3,3 +3,27 @@
     height:auto;
     display:inline-block;
 }
+
+#petTableButton {
+    background-color:#f06d06;
+}
+
+#petTableButton2 {
+    background-color:#f06d06;
+}
+
+#petTableButton3 {
+    background-color:#f06d06;
+}
+
+#petFormSubmit {
+    background-color:#f06d06;
+}
+
+#ownerTableDeleteButton {
+    background-color:#f06d06;
+}
+
+#ownerSubmitButton {
+    background-color:#f06d06;
+}
