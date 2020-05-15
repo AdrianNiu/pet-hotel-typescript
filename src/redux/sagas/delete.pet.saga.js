@@ -5,7 +5,7 @@ function* deletePet(action) {
     try {
         console.log('made it to DELETE PET SAGA', action.payload)
         yield axios.delete('/pet', {data: action.payload});
-        yield put({ type: 'FETCH_PETS' });
+        yield put({ type: 'GET_PETS' });
     } catch (error) {
         console.error('Sample DELETE failed', error);
     }

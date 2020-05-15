@@ -58,15 +58,9 @@ class PetForm extends Component{
         
         return(
             <>
-
-
-{JSON.stringify(this.props.store.ownerReducer)}
-
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
-                
-  
                     <select value={this.state.value} onChange={this.handleOwnerChange}>
                     <option value=''>
                             Choose an owner

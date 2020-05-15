@@ -17,10 +17,8 @@ class ManageOwner extends Component {
       <>
         <h1>Manage Owner</h1>
         <div>
-        {JSON.stringify(this.props.store.ownerReducer)}
         <OwnerForm />
         <OwnerTable />
-
       </div>
       </>
 
