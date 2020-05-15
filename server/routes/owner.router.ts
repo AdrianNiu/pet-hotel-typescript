@@ -50,5 +50,27 @@ router.post(
 )
 
 
+/**
+ * DELETE route
+ */
+router.delete(
+  '/:id',
+  (req: Request, res: Response, next: express.NextFunction): void => {
+    console.log('In delete request?',req.params)
+    const id: string = req.params.id;
+    const queryText: string = `DELETE FROM "user" WHERE "id" = $1;`;
+    pool.query(queryText, [id])
+      .then((response: any): void => {
+        res.sendStatus(201);
+      })
+      .catch((err: string): void => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+  }
+)
+
+
+
 
 export default router;
