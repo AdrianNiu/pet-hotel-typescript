@@ -10,7 +10,7 @@ router.get(
     (req: Request, res: Response, next: express.NextFunction): void => {
         const queryString: string = 
         `SELECT "pet"."id", "pet_name", "username", 
-        "pet_color", "pet_breed", "check_in" FROM "pet" 
+        "pet_color", "pet_breed", "check_in", "image_url" FROM "pet" 
         JOIN "user" ON "user"."id" = "pet"."user_id"
         ORDER BY "username", "pet_name";`;
         pool
@@ -26,7 +26,7 @@ router.get(
 );
 
 /**
- * POST route template
+ * POST route
  */
 
 
@@ -34,9 +34,9 @@ router.post(
     '/',
     (req: Request, res: Response, next: express.NextFunction): void => {
         console.log('made it to server Pet POST', req.body);
-        const queryString: string = `INSERT INTO "pet" ("pet_name", "pet_color", "pet_breed", "user_id", "check_in" ) VALUES ($1, $2, $3, $4, FALSE);`;
+        const queryString: string = `INSERT INTO "pet" ("pet_name", "pet_color", "pet_breed", "user_id", "image_url", "check_in" ) VALUES ($1, $2, $3, $4, $5, FALSE);`;
 
-        pool.query(queryString, [req.body.name, req.body.color, req.body.breed, req.body.owner])
+        pool.query(queryString, [req.body.name, req.body.color, req.body.breed, req.body.owner, req.body.url])
         .then ((response:any): void => {
             res.sendStatus(201);
         })
