@@ -61,16 +61,16 @@ class PetForm extends Component{
             <Form onSubmit={this.handleSubmit} inline>
                     <h2>Add Pet</h2>
                 <FormGroup>
-                    <select value={this.state.value} onChange={this.handleOwnerChange}>
-                    <option value=''>
+                    <Input type="select" value={this.state.value} onChange={this.handleOwnerChange}>
+                        <option value=''>
                             Choose an owner
                         </option>
-                    {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
+                        {this.props.store.ownerReducer && this.props.store.ownerReducer.map(item => (
                         <option key={item.id} value={item.id}>
                             {item.username}
                         </option>
                 ))} 
-                    </select>
+                    </Input>
                     <Input placeholder="Pet" onChange={(event) => { this.handleChange(event, 'name') }}></Input>
                     <Input placeholder="Pet Color" onChange={(event) => { this.handleChange(event, 'color') }}></Input>   
                     <Input placeholder="Pet Breed" onChange={(event) => { this.handleChange(event, 'breed') }}></Input>
