@@ -2,6 +2,48 @@ Group project for pet hotel
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Minneapolis Pet Hotel
+This is a pet management tool to help track pet's owner, check-in and check-out status.
+
+## Prerequisites
+
+Before you get started, make sure you have the following software installed on your computer:
+
+
+## Installation
+
+1. Create a new database called `pet_hotel`
+    * The `database.sql` file contains the queries you will need to be able to set up the required tables for this application
+2. Run `npm install`
+3. Create a `.env` file at the root of the project and paste this line into the file:
+    ```
+    SERVER_SESSION_SECRET=superDuperSecret
+    ```
+    * While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
+4. If Postgres is not already running, start it by entering `brew services start postgresql` into the terminal
+5. Run `npm run server`
+6. Run `npm run client`
+7. Running the two previous commands will open a web browser with the application
+
+
+## Built With
+
+* React
+* React Sagas
+* Redux
+* JavaScript
+* TypeScript
+* React Bootstrap
+* Sweet Alerts
+* Node.js
+* Express
+* PostgreSQL
+* Passport
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](https://www.primeacademy.io) for providing the knowledge to create this application
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,42 +71,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
